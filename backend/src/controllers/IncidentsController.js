@@ -35,7 +35,6 @@ module.exports = {
             ong_id
         });
 
-        // const id = result[0];
         return response.json({ id });
     },
 
