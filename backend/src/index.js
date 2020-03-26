@@ -1,8 +1,13 @@
 const express = require('express');
+const cors = require('cors');
 const routes = require('./routes');
 
 const app = express();
 
+app.use(cors());
+// app.use(cors({
+//     origin: 'http://joaobetehero.heroku.com'
+// }));
 app.use(express.json());
 /**
  * Tipos de parametros
