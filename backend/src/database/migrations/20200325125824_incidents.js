@@ -1,7 +1,7 @@
 
 exports.up = (knex) => {
     return knex.schema.createTable('incidents', (table) => {
-        table.increments();
+        table.string('id').primary();
         table.string('titulo').notNullable();
         table.string('descricao').notNullable();
         table.decimal('valor').notNullable();
