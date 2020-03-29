@@ -1,4 +1,4 @@
-const crypto = require('crypto');
+const generateIDUtils = require('../utils/generateIDUtils');
 const connection = require('../database/connection');
 
 module.exports = {
@@ -29,7 +29,7 @@ module.exports = {
         const { titulo, descricao, valor } = request.body;
         const ong_id = request.headers.authorization;
 
-        const id = crypto.randomBytes(4).toString('HEX');
+        const id = generateIDUtils();
 
         await connection('incidents').insert({
             id,
