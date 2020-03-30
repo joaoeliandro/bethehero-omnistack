@@ -1,11 +1,11 @@
-// Update with your config settings.
+require('dotenv/config');
 
 module.exports = {
 
   development: {
     client: 'sqlite3',
     connection: {
-      filename: './src/database/db.sqlite'
+      filename: process.env.DATABASE_URL_DEV
     },
     migrations: {
       directory: './src/database/migrations'
@@ -16,7 +16,7 @@ module.exports = {
   test: {
     client: 'sqlite3',
     connection: {
-      filename: './src/database/test.sqlite'
+      filename: process.env.DATABASE_URL_DEV
     },
     migrations: {
       directory: './src/database/migrations'
@@ -41,18 +41,17 @@ module.exports = {
   },
 
   production: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user: 'username',
-      password: 'password'
-    },
+    client: 'pg',
+    connection: process.env.DATABASE_URL,
     pool: {
       min: 2,
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
+      directory: './src/database/migrations'
+    },
+    seeds: {
+      directory: './src/database/seeds'
     }
   }
 
