@@ -13,7 +13,7 @@
     "test": "cross-env NODE_ENV=test && jest"
   },
   "keywords": [],
-  "author": "",
+  "author": "Eliandro",
   "license": "ISC",
   "dependencies": {
     "celebrate": "^12.0.1",
