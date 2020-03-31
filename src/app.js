@@ -8,8 +8,11 @@ const app = express();
 app.use(cors({
     origin: ['http://betheheroeliandro.herokuapp.com'],
     methods: ['GET', 'PUT', 'POST', 'DELETE'],
-    exposedHeaders: ['Access-Control-Allow-Origin', 'Access-Control-Allow-Methods', 'Access-Control-Allow-Headers'],
+    exposedHeaders: ['Access-Control-Allow-Origin'],
     allowedHeaders: ['Content-Type', 'Authorization'],
+    maxAge: 3600,
+    preflightContinue: false,
+    optionsSuccessStatus: 204
 }));
 app.use(express.json());
 app.use(routes);
