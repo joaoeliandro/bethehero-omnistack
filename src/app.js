@@ -5,13 +5,13 @@ const routes = require('./routes');
 
 const app = express();
 
-app.options('*', cors());
-app.use(cors({
+app.options('*', cors({
     origin: ['http://URL_MY_FRONTEND'],
     methods: ['GET', 'PUT', 'POST', 'DELETE'],
     exposedHeaders: ['Access-Control-Allow-Origin'],
     allowedHeaders: ['Content-Type', 'Authorization'],
 }));
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 app.use(errors());
