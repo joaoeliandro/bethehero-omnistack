@@ -5,7 +5,10 @@ const routes = require('./routes');
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: ['http://betheheroeliandro.herokuapp.com'],
+    exposedHeaders: ['Access-Control-Allow-Origin'],
+}));
 app.use(express.json());
 app.use(routes);
 app.use(errors());
