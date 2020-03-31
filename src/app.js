@@ -8,8 +8,9 @@ const app = express();
 app.use(cors({
     origin: ['http://betheheroeliandro.herokuapp.com'],
     methods: ['GET', 'PUT', 'POST', 'DELETE'],
-    exposedHeaders: ['Access-Control-Allow-Origin'],
+    exposedHeaders: ['Access-Control-Allow-Origin', 'Access-Control-Allow-Methods'],
     allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
 }));
 app.use(express.json());
 app.use(routes);
