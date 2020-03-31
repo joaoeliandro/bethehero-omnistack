@@ -10,7 +10,7 @@ app.use(cors({
     methods: ['GET', 'PUT', 'POST', 'DELETE'],
     exposedHeaders: ['Access-Control-Allow-Origin'],
     allowedHeaders: ['Content-Type'],
-    preflightContinue: [false]
+    preflightContinue: [true]
 }));
 app.use(express.json());
 app.use(routes);
