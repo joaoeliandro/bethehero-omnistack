@@ -5,9 +5,12 @@ const routes = require('./routes');
 
 const app = express();
 
-app.options('*', cors({
-    origin: ['http://betheheroeliandro.herokuapp.com'],
+app.options('*', cors());
+app.use(cors({
+    origin: ['http://URL_MY_FRONTEND'],
+    methods: ['GET', 'PUT', 'POST', 'DELETE'],
     exposedHeaders: ['Access-Control-Allow-Origin'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 app.use(express.json());
 app.use(routes);
