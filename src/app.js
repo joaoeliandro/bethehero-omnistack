@@ -9,7 +9,7 @@ app.use(cors({
     origin: ['http://betheheroeliandro.herokuapp.com'],
     methods: ['GET', 'PUT', 'POST', 'DELETE'],
     exposedHeaders: ['Access-Control-Allow-Origin', 'Access-Control-Allow-Methods'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Custom-Header'],
     credentials: true
 }));
 app.use(express.json());
