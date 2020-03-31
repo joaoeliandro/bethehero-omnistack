@@ -7,6 +7,7 @@ const app = express();
 
 app.use(cors({
     origin: ['https://betheheroeliandro.herokuapp.com'],
+    methods: ['GET', 'PUT', 'POST', 'DELETE'],
     exposedHeaders: ['Access-Control-Allow-Origin'],
 }));
 app.use(express.json());
